@@ -1,0 +1,11 @@
+# Datos personales: nunca a git
+perfil.yaml
+docs/*
+!docs/LEEME.txt
+comunicados/*
+!comunicados/registro.md
+*.pdf
+*.p12
+*.pfx
+.DS_Store
+.claude/settings.local.json

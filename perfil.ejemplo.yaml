@@ -1,0 +1,65 @@
+# Plantilla de perfil. NO la edites a mano: di "configúrame" y el asistente crea perfil.yaml con tus datos.
+# perfil.yaml es tuyo y solo vive en tu ordenador.
+
+operador:                      # titular (normalmente tú)
+  documento: { tipo: DNI, numero: "" }      # DNI o NIE
+  nombre: ""
+  apellido1: ""
+  apellido2: ""
+  direccion: ""
+  provincia: ""
+  localidad: ""
+  codigo_postal: ""
+  email: ""
+  telefono: ""                 # OBLIGATORIO: va en "Datos del Operador > Teléfono de contacto" (lo pide la Guardia Civil)
+  registro_operador: ""        # Nº de REGISTRO DE OPERADOR UAS (AESA), empieza por ESP… — NO es el del piloto
+  certificado_registro_pdf: docs/certificado_registro_operador.pdf
+
+piloto:                        # quien vuela (si eres tú, mismos datos)
+  documento: { tipo: DNI, numero: "" }
+  nombre: ""
+  apellido1: ""
+  apellido2: ""
+  telefono: ""
+  certificado_competencia: ""  # Nº de PILOTO A DISTANCIA A1/A3 (AESA), formato ESP-RP-…
+  certificado_pdf: docs/certificado_piloto_A1A3.pdf
+  acreditacion_formacion: N/A
+  seguro: null                 # { aseguradora, poliza, vigencia } si tienes
+
+uas:                           # un bloque por dron
+  # ejemplo:
+  #   fabricante: BetaFPV
+  #   codigo_modelo: Pavo        # máx. 4 caracteres
+  #   descripcion_modelo: Pavo20 Pro II
+  #   numero_serie: N/A
+  #   clase: Rotor
+  #   matricula: N/A
+  #   mtom_g: 117                # peso al despegue CON batería. ≥250 g construcción propia → solo A3, nunca urbano
+  #   autonomia_min: 4
+  #   autopiloto: "No"
+  #   banda: "ELRS 2.4 GHz"
+  #   color: Negro
+  #   luces: si
+  #   carga: "no"
+  #   vhf: "no"
+  #   modo_s: "no"
+  #   equipo_emergencia: "no"
+  #   vision_adelante: si
+
+observadores: []               # - { tipo_documento: NIE, documento: "", nombre: "", apellido1: "", por_defecto: false }
+
+preferencias:                  # valores por defecto si no dices otra cosa al pedir un comunicado
+  horario: "00:00-23:55"       # todo el día
+  radio_m: 100                 # zona alrededor de un lugar concreto
+  radio_pueblo_m: 500          # zona cuando solo dices el nombre del pueblo
+
+guardado:
+  carpeta_movil: null          # p.ej. "~/Dropbox/drones/comunicaciones" para verlos en el móvil (opcional)
+
+# Se rellenan solas al hacer comunicados:
+ubicaciones: {}
+#  playa_del_cristo:
+#    lugar: "36.41700,-5.15200,17"
+#    radio_m: 100
+#    poligono: [[lon,lat], ...]
+#    comunicacion_origen: C00000…   # primera comunicación presentada aquí → se clona las siguientes veces
