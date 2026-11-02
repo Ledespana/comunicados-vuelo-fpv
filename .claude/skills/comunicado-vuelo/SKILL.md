@@ -6,6 +6,8 @@ description: Prepara en Chrome una comunicación de vuelo de dron (UAS) al Minis
 # Comunicación de vuelo UAS – Ministerio del Interior
 
 Datos del operador, piloto, drones y ubicaciones: `perfil.yaml`. Si no existe → usa primero el skill `configurar`.
+Funciona igual en Mac y Windows (todo ocurre en Chrome). Para copiar archivos usa los comandos del sistema del usuario
+(`perfil.yaml > sistema`: mac → cp; windows → PowerShell `Copy-Item`).
 Usa Claude in Chrome (carga primero el skill `anthropic-skills:chrome-browser` si existe).
 Nunca pulses "Firmar y presentar" sin un "firma" explícito del usuario para esa comunicación.
 
@@ -32,8 +34,9 @@ abajo si no existen) y se enseña en el resumen final, donde el usuario puede co
    una captura que el pin está en el sitio correcto, clic en el punto → panel "Information". Si hay zona restringida (ZRVF/CECAF, LER/LED Defensa, parque nacional/natural con restricción,
    CTR de aeropuerto, NOTAM): **para** y explica que hace falta otro trámite; este agente solo cubre zonas sin restricciones.
    Si ENAIRE pide aceptar condiciones, que las acepte el usuario.
-3. Genera la zona: `python3 -I .claude/skills/comunicado-vuelo/scripts/zona.py <lat> <lon> <radio_m>` → `mapa_value`,
-   `lugar` ("lat,lon,17") y `poligono`.
+3. Genera la zona DENTRO de la página del formulario (vale para Mac y Windows, sin instalar nada): lee
+   `.claude/skills/comunicado-vuelo/scripts/zona.js`, ejecuta la función `zonaCirculo` con javascript_tool y llámala:
+   `zonaCirculo(<lat>, <lon>, <radio_m>)` → `mapaValue`, `lugar` ("lat,lon,17") y `poligono`.
 4. No pidas confirmación aparte: incluye una captura del mapa del formulario en el resumen final (§5). Si el usuario quiere
    otra zona, la ajustas (otro punto/radio) o la dibuja él con la herramienta polígono y la lees de `zona_act1:mapa_value`.
 5. Guarda el sitio en `perfil.yaml > ubicaciones.<nombre>` (lugar, radio_m, poligono) para reutilizarlo.
@@ -45,7 +48,8 @@ abajo si no existen) y se enseña en el resumen final, donde el usuario puede co
 3. Login correcto = `https://drones.ses.mir.es/drones-web/acceso`. Si la sesión sigue viva, abre esa URL directamente.
 Si se queda parado: probablemente hay un selector de certificado o un aviso del llavero abierto → pide al usuario que elija
 su certificado / "Permitir siempre" (nunca introduzcas contraseñas). Si Cl@ve da error 500 `003002`: el usuario canceló el
-selector → Cmd+Q en Chrome y repetir.
+selector → cerrar Chrome del todo y repetir (Mac: Cmd+Q; Windows: cerrar todas las ventanas y, si sigue en la bandeja
+junto al reloj, clic derecho → Salir).
 
 ## 4. Rellenar
 La navegación directa por URL a veces redirige a /acceso: usa los enlaces del menú (Comunicaciones → "Comunicaciones de vuelo").
@@ -100,7 +104,8 @@ no falte nada.
 - Éxito = `/drones-web/resultado` con "Comunicación registrada correctamente con identificador C…".
 
 ## 6. Guardar (siempre)
-1. En /resultado: "Descargar acuse" y "Descargar PDF" → `~/Downloads/<C…>-acuse.pdf` y `<C…>-solicitud.pdf`.
+1. En /resultado: "Descargar acuse" y "Descargar PDF" → carpeta Descargas (`~/Downloads` en Mac,
+   `%USERPROFILE%\Downloads` en Windows): `<C…>-acuse.pdf` y `<C…>-solicitud.pdf`.
 2. Lee el acuse para sacar el nº de registro (REGAGE…) y la fecha. Lee el PDF de la solicitud y comprueba fecha/hora de
    cada actividad y el teléfono en la página 1. Si algo no cuadra, avisa.
 3. Copia ambos a `comunicados/AAAA-MM-DD_<Sitio>_<C…>_acuse.pdf` / `_comunicacion.pdf` (fecha = primer día de vuelo) y, si

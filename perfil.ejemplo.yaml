@@ -1,6 +1,8 @@
 # Plantilla de perfil. NO la edites a mano: di "configúrame" y el asistente crea perfil.yaml con tus datos.
 # perfil.yaml es tuyo y solo vive en tu ordenador.
 
+sistema: ""                    # mac | windows (lo pone el asistente)
+
 operador:                      # titular (normalmente tú)
   documento: { tipo: DNI, numero: "" }      # DNI o NIE
   nombre: ""

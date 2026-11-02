@@ -38,10 +38,10 @@ comprobaciones en cada paso.
 - No sirve para drones de construcción propia de 250 g o más en zona urbana (solo pueden volar en A3).
 
 ## Requisitos
-- Mac con **Google Chrome**.
+- **Mac o Windows** con **Google Chrome**. (Windows es más nuevo: si algo falla, abre un issue.)
 - **App de escritorio de Claude** ([descarga](https://claude.ai/download)) con un plan que incluya Claude Code.
 - Extensión **Claude in Chrome** instalada y conectada.
-- **Certificado digital FNMT** de persona física instalado en el Mac, y **AutoFirma**
+- **Certificado digital FNMT** de persona física instalado en el ordenador, y **AutoFirma**
   (el asistente te explica cómo conseguirlos si no los tienes).
 - Tus PDF de AESA: **certificado de registro de operador UAS** y **certificado A1/A3** del piloto
   (se descargan en [sede.seguridadaerea.gob.es](https://sede.seguridadaerea.gob.es)).
@@ -82,9 +82,10 @@ Valores por defecto (`perfil.yaml > preferencias`):
 | Altura / tipo | 120 m, VLOS |
 
 ## Que Chrome elija tu certificado solo (recomendado)
-Sin esto, Chrome te enseña la lista de certificados cada vez que entras en Interior o firmas. El asistente te lo propone;
-a mano:
+Sin esto, Chrome te enseña la lista de certificados cada vez que entras en Interior o firmas. **El asistente lo hace por
+ti durante la configuración** (en Mac y en Windows). Si lo quieres hacer a mano:
 
+**Mac:**
 1. Pega en la app **Terminal**:
    ```
    defaults write com.google.Chrome AutoSelectCertificateForUrls -array \
@@ -95,8 +96,16 @@ a mano:
 3. La primera vez, el Mac pide permiso para la clave del certificado: **Permitir siempre**.
 4. Ten **un solo** certificado FNMT en el llavero (borra los caducados), o Chrome volverá a preguntar.
 
+**Windows:**
+1. Clic derecho en `.claude\skills\configurar\scripts\windows\chrome-certificado.ps1` → **Ejecutar con PowerShell**
+   (guarda la misma política en el Registro de tu usuario).
+2. Cierra Chrome del todo (todas las ventanas y, si queda el icono junto al reloj, clic derecho → Salir) y ábrelo.
+   En `chrome://policy` debe salir *AutoSelectCertificateForUrls* con estado OK.
+3. Ten **un solo** certificado FNMT (tecla Windows → `certmgr.msc` → Personal → Certificados; borra los caducados).
+
 ## Si algo falla
-- *"No ha seleccionado ningún certificado"* o error 500 de Cl@ve: cierra Chrome con **Cmd+Q**, ábrelo y repite. Si sale la
+- *"No ha seleccionado ningún certificado"* o error 500 de Cl@ve: cierra Chrome del todo (Mac: **Cmd+Q**; Windows: todas
+  las ventanas y el icono junto al reloj), ábrelo y repite. Si sale la
   lista, elige tu certificado; no pulses Cancelar (Chrome lo recuerda hasta que lo cierras).
 - Cualquier duda: pregúntale *"¿cómo hago…?"*.
 
@@ -110,7 +119,8 @@ CLAUDE.md                                         reglas generales para Claude
 perfil.ejemplo.yaml                               plantilla del perfil (el asistente crea perfil.yaml)
 .claude/skills/configurar/SKILL.md                asistente de configuración
 .claude/skills/comunicado-vuelo/SKILL.md          agente de comunicados (incluye recetas del formulario de la sede)
-.claude/skills/comunicado-vuelo/scripts/zona.py   genera la zona de vuelo en el formato GeoJSON del formulario
+.claude/skills/comunicado-vuelo/scripts/zona.js   genera la zona de vuelo (se ejecuta en el navegador)
+.claude/skills/configurar/scripts/windows/        comprobaciones y política de Chrome para Windows
 comunicados/registro.md                           tu registro de comunicaciones
 ```
 
