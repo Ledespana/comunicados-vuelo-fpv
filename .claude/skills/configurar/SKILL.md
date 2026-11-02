@@ -51,6 +51,8 @@ Sin la extensión Claude in Chrome conectada no se pueden hacer comunicados (es 
 4. Prueba: abre una pestaña nueva con https://www.google.com y explícale cómo verte en directo: en Chrome, clic en el
    **grupo de pestañas <nombre>** (etiqueta de color a la izquierda de las pestañas; si está plegado, se despliega) →
    seleccionar la pestaña de dentro. Chrome solo muestra en vivo la pestaña seleccionada. Pídele que confirme que la ve.
+   Recomiéndale **pantalla partida**: la app de Claude en una mitad y Chrome en la otra (Mac: mantener pulsado el botón
+   verde de la ventana → Mosaico; Windows: Windows + ← / →). Es la forma de revisar en directo lo que se va rellenando.
    Si no encuentra el grupo, puede estar en otra ventana de Chrome.
 
 ## Fase 1 — Documentos de AESA (lo más fiable)

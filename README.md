@@ -69,6 +69,16 @@ Queda guardado en la carpeta. Solo hay que volver al asistente si cambia algo:
 | AESA te renueva un certificado | *"aquí tienes mi nuevo certificado"* (y arrastra el PDF) |
 
 ## Uso (cada vez que vayas a volar)
+
+> 💡 **La mejor forma de usarlo: pantalla partida.** Pon la app de Claude en una mitad de la pantalla y Chrome en la otra.
+> Así ves en directo cómo Claude rellena cada campo en Chrome y puedes revisarlo mientras lo hace.
+> - **Mac:** mantén pulsado el botón verde de la ventana de Claude → "Mosaico a la izquierda de la pantalla" → elige Chrome
+>   para la derecha.
+> - **Windows:** con la ventana de Claude activa pulsa **Windows + ←**, y luego elige Chrome para la otra mitad.
+>
+> En Chrome, haz clic en el **grupo de pestañas** con el nombre de la conversación y selecciona la pestaña de dentro
+> (Chrome solo muestra en vivo la pestaña seleccionada).
+
 1. Abre Chrome.
 2. App de Claude → **Code** → la carpeta del proyecto (sale en recientes). Cada conversación empieza de cero, pero lee tus
    datos de la carpeta.
