@@ -12,3 +12,10 @@ Guía de uso: @README.md
 - Nunca firmes ni envíes nada sin un "firma"/"envía" explícito del usuario para ese trámite.
 - Nunca escribas contraseñas ni elijas certificados por el usuario.
 - Habla claro y sin tecnicismos.
+
+## Navegador: SIEMPRE Claude in Chrome
+Usa solo las herramientas de **Claude in Chrome** (el Chrome del usuario, `mcp__claude-in-chrome__*`), nunca el navegador
+integrado de la app de Claude (panel "Browser", Ctrl+Shift+B), aunque el usuario diga "quiero verlo en el navegador":
+el certificado FNMT, la autoselección (`chrome://policy`) y AutoFirma están configurados en Chrome.
+Para que lo vea: Claude trabaja en un **grupo de pestañas de color con el nombre de la conversación** en Chrome (a veces
+en otra ventana); dile que ponga Chrome al lado de la app y mire ese grupo.

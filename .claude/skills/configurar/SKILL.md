@@ -26,6 +26,8 @@ sencilla antes de rendirte.
 
 ## Fase 0b — Claude in Chrome (imprescindible)
 Sin la extensión Claude in Chrome conectada no se pueden hacer comunicados (es la que rellena la web de Interior).
+0. Usa SOLO Claude in Chrome (`mcp__claude-in-chrome__*`), nunca el navegador integrado de la app (panel "Browser"):
+   el certificado, la política de Chrome y AutoFirma viven en Chrome.
 1. Comprueba si tienes las herramientas del navegador: intenta `tabs_context_mcp` (si son herramientas diferidas, cárgalas
    antes con ToolSearch). Si responde con pestañas → ✅, dile que verá a Claude trabajar en un **grupo de pestañas** de
    color en Chrome (a veces en otra ventana) y pasa a la fase 1.

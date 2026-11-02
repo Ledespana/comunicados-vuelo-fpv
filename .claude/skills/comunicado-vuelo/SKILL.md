@@ -8,7 +8,8 @@ description: Prepara en Chrome una comunicación de vuelo de dron (UAS) al Minis
 Datos del operador, piloto, drones y ubicaciones: `perfil.yaml`. Si no existe → usa primero el skill `configurar`.
 Funciona igual en Mac y Windows (todo ocurre en Chrome). Para copiar archivos usa los comandos del sistema del usuario
 (`perfil.yaml > sistema`: mac → cp; windows → PowerShell `Copy-Item`).
-Usa Claude in Chrome (carga primero el skill `anthropic-skills:chrome-browser` si existe).
+Usa SIEMPRE Claude in Chrome (el Chrome del usuario), nunca el navegador integrado de la app de Claude: el certificado,
+la autoselección y AutoFirma están en Chrome. Carga primero el skill `anthropic-skills:chrome-browser` si existe.
 Nunca pulses "Firmar y presentar" sin un "firma" explícito del usuario para esa comunicación.
 
 ## 1. Datos del vuelo: usa valores por defecto, NO preguntes
