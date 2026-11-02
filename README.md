@@ -40,7 +40,8 @@ comprobaciones en cada paso.
 ## Requisitos
 - **Mac o Windows** con **Google Chrome**. (Windows es más nuevo: si algo falla, abre un issue.)
 - **App de escritorio de Claude** ([descarga](https://claude.ai/download)) con un plan que incluya Claude Code.
-- Extensión **Claude in Chrome** instalada y conectada.
+- Extensión **Claude in Chrome** (Chrome Web Store → "Claude", de Anthropic) con la misma cuenta que la app.
+  El asistente comprueba que está conectada y te guía si no lo está.
 - **Certificado digital FNMT** de persona física instalado en el ordenador, y **AutoFirma**
   (el asistente te explica cómo conseguirlos si no los tienes).
 - Tus PDF de AESA: **certificado de registro de operador UAS** y **certificado A1/A3** del piloto

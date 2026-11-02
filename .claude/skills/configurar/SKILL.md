@@ -24,6 +24,22 @@ En Windows ejecuta PowerShell así (evita problemas de comillas): escribe el com
 Windows está menos probado que Mac: si algo no sale como se describe, explícale al usuario lo que ves y busca otra forma
 sencilla antes de rendirte.
 
+## Fase 0b — Claude in Chrome (imprescindible)
+Sin la extensión Claude in Chrome conectada no se pueden hacer comunicados (es la que rellena la web de Interior).
+1. Comprueba si tienes las herramientas del navegador: intenta `tabs_context_mcp` (si son herramientas diferidas, cárgalas
+   antes con ToolSearch). Si responde con pestañas → ✅, dile que verá a Claude trabajar en un **grupo de pestañas** de
+   color en Chrome (a veces en otra ventana) y pasa a la fase 1.
+2. Si no existen las herramientas o da error de "no conectado", guíale paso a paso:
+   1. Abrir **Google Chrome** (no otro navegador).
+   2. Instalar la extensión: Chrome Web Store → buscar **"Claude"** (editor: Anthropic) → **Añadir a Chrome**.
+   3. Fijarla: icono del puzle 🧩 arriba a la derecha → chincheta junto a Claude.
+   4. Pulsar el icono de Claude → **iniciar sesión con la misma cuenta** que usa en la app de Claude.
+   5. En la app de Claude: Ajustes → Conectores (o la sección "Claude in Chrome") → comprobar que está **activado**.
+   6. Cerrar esta conversación, abrir una **nueva** en la misma carpeta y decir "configúrame" otra vez (las herramientas
+      del navegador se cargan al empezar la conversación; lo ya guardado en perfil.yaml no se pierde).
+3. Prueba: abre una pestaña nueva con https://www.google.com y pídele que confirme que la ve aparecer en Chrome.
+   Si la ves tú pero él no: está en otra ventana de Chrome → que busque el grupo de pestañas de Claude.
+
 ## Fase 1 — Documentos de AESA (lo más fiable)
 1. Pide al usuario que arrastre a la conversación (o deje en `docs/`) estos PDF de AESA:
    - **Certificado de registro de operador UAS** (el que tiene logo EASA + AESA y "Fecha de caducidad"; NO el justificante
@@ -102,7 +118,6 @@ Luego, guíale:
 3. Mac: la primera vez el Mac pedirá permiso para la clave del certificado → **Permitir siempre**.
    Windows: puede salir una ventana "Seguridad de Windows" para elegir certificado o confirmar: aceptar.
 4. Si en la fase 4 había más de un certificado FNMT, que borre el caducado.
-Necesita además la extensión **Claude in Chrome** instalada y conectada.
 
 ## Fase 7 — Prueba de acceso (sin presentar nada)
 Con Claude in Chrome: https://sede.interior.gob.es/portal/sede/tramites?codAgrupacion=Drones → **Acceso** en
