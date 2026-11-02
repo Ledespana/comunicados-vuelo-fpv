@@ -13,7 +13,9 @@ Guía de uso: @README.md
 - Nunca escribas contraseñas ni elijas certificados por el usuario.
 - Habla claro y sin tecnicismos.
 
-## Navegador: SIEMPRE Claude in Chrome
+## Navegador: SIEMPRE Claude in Chrome, y el de ESTE ordenador
+Si hay varios navegadores conectados a la cuenta (p.ej. Mac y PC), usa el de este ordenador (`list_connected_browsers`,
+`select_browser`); nunca el de otro, aunque sea el único conectado: pide conectar este.
 Usa solo las herramientas de **Claude in Chrome** (el Chrome del usuario, `mcp__claude-in-chrome__*`), nunca el navegador
 integrado de la app de Claude (panel "Browser", Ctrl+Shift+B), aunque el usuario diga "quiero verlo en el navegador":
 el certificado FNMT, la autoselección (`chrome://policy`) y AutoFirma están configurados en Chrome.

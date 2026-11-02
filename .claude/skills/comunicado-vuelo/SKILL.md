@@ -43,6 +43,8 @@ abajo si no existen) y se enseña en el resumen final, donde el usuario puede co
 5. Guarda el sitio en `perfil.yaml > ubicaciones.<nombre>` (lugar, radio_m, poligono) para reutilizarlo.
 
 ## 3. Login
+0. Comprueba que manejas el Chrome de ESTE ordenador (`list_connected_browsers` → sistema = `perfil.yaml > sistema`;
+   si no, `select_browser` o pide conectarlo). Con varios ordenadores en la misma cuenta es fácil manejar el de otro.
 1. `https://sede.interior.gob.es/portal/sede/tramites?codAgrupacion=Drones` → **Acceso** en
    "Comunicación de vuelo de aeronave pilotada por control remoto".
 2. Cl@ve → **Access eIdentifier**. Espera ~8 s.

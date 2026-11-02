@@ -28,10 +28,19 @@ sencilla antes de rendirte.
 Sin la extensión Claude in Chrome conectada no se pueden hacer comunicados (es la que rellena la web de Interior).
 0. Usa SOLO Claude in Chrome (`mcp__claude-in-chrome__*`), nunca el navegador integrado de la app (panel "Browser"):
    el certificado, la política de Chrome y AutoFirma viven en Chrome.
-1. Comprueba si tienes las herramientas del navegador: intenta `tabs_context_mcp` (si son herramientas diferidas, cárgalas
+1. **Que sea el Chrome de ESTE ordenador.** Claude in Chrome se conecta por cuenta, no por ordenador: si el usuario tiene
+   Claude en varios ordenadores, puedes acabar manejando el Chrome de otro (pasó: la sesión de un PC Windows manejaba el
+   Chrome de un Mac y el usuario no veía nada). Antes de nada, lista los navegadores conectados (`list_connected_browsers`)
+   y compara su sistema con `perfil.yaml > sistema`:
+   - si hay uno de este sistema/ordenador → selecciónalo (`select_browser`);
+   - si solo hay de otro ordenador → NO lo uses; pide conectar el Chrome de este ordenador (petición de conexión → en este
+     Chrome sale un aviso → **Connect**/Conectar en menos de 2 minutos);
+   - si dudas, abre google.com y pregúntale si lo ve aparecer en ESTE ordenador.
+   Repite esta comprobación al empezar cada conversación que use el navegador.
+2. Comprueba si tienes las herramientas del navegador: intenta `tabs_context_mcp` (si son herramientas diferidas, cárgalas
    antes con ToolSearch). Si responde con pestañas → ✅, dile que verá a Claude trabajar en un **grupo de pestañas** de
    color en Chrome (a veces en otra ventana) y pasa a la fase 1.
-2. Si no existen las herramientas o da error de "no conectado", guíale paso a paso:
+3. Si no existen las herramientas o da error de "no conectado", guíale paso a paso:
    1. Abrir **Google Chrome** (no otro navegador).
    2. Instalar la extensión: Chrome Web Store → buscar **"Claude"** (editor: Anthropic) → **Añadir a Chrome**.
    3. Fijarla: icono del puzle 🧩 arriba a la derecha → chincheta junto a Claude.
@@ -39,7 +48,7 @@ Sin la extensión Claude in Chrome conectada no se pueden hacer comunicados (es 
    5. En la app de Claude: Ajustes → Conectores (o la sección "Claude in Chrome") → comprobar que está **activado**.
    6. Cerrar esta conversación, abrir una **nueva** en la misma carpeta y decir "configúrame" otra vez (las herramientas
       del navegador se cargan al empezar la conversación; lo ya guardado en perfil.yaml no se pierde).
-3. Prueba: abre una pestaña nueva con https://www.google.com y explícale cómo verte en directo: en Chrome, clic en el
+4. Prueba: abre una pestaña nueva con https://www.google.com y explícale cómo verte en directo: en Chrome, clic en el
    **grupo de pestañas <nombre>** (etiqueta de color a la izquierda de las pestañas; si está plegado, se despliega) →
    seleccionar la pestaña de dentro. Chrome solo muestra en vivo la pestaña seleccionada. Pídele que confirme que la ve.
    Si no encuentra el grupo, puede estar en otra ventana de Chrome.
