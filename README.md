@@ -16,6 +16,11 @@ Funciona con [Claude Code](https://claude.com/claude-code) (la pestaña **Code**
 extensión **Claude in Chrome**. No es un programa con pasos fijos: son instrucciones ("skills") que Claude sigue, con
 comprobaciones en cada paso.
 
+> ⚠️ **Importante: la extensión Claude in Chrome tiene que estar conectada en el Chrome DE ESTE ORDENADOR.**
+> La extensión se conecta a tu cuenta de Claude, no a un ordenador: si tienes Claude en varios ordenadores (por ejemplo un
+> Mac y un PC), Claude podría manejar el Chrome del otro y tú no verías nada. El asistente lo comprueba al empezar, pero
+> asegúrate de tener la extensión instalada, con sesión iniciada, en el Chrome del ordenador que estás usando.
+
 > ⚠️ Proyecto personal, sin relación con el Ministerio del Interior, AESA ni ENAIRE. Tú eres el responsable de lo que
 > presentas y de cumplir la normativa (Reglamento UE 2019/947, RD 517/2024). Revisa siempre el resumen antes de firmar.
 
@@ -40,7 +45,8 @@ comprobaciones en cada paso.
 ## Requisitos
 - **Mac o Windows** con **Google Chrome**. (Windows es más nuevo: si algo falla, abre un issue.)
 - **App de escritorio de Claude** ([descarga](https://claude.ai/download)) con un plan que incluya Claude Code.
-- Extensión **Claude in Chrome** (Chrome Web Store → "Claude", de Anthropic) con la misma cuenta que la app.
+- Extensión **Claude in Chrome** (Chrome Web Store → "Claude", de Anthropic) **en el Chrome de este ordenador**, con la
+  misma cuenta que la app.
   El asistente comprueba que está conectada y te guía si no lo está.
 - **Certificado digital FNMT** de persona física instalado en el ordenador, y **AutoFirma**
   (el asistente te explica cómo conseguirlos si no los tienes).
@@ -108,6 +114,9 @@ ti durante la configuración** (en Mac y en Windows). Si lo quieres hacer a mano
 - *"No ha seleccionado ningún certificado"* o error 500 de Cl@ve: cierra Chrome del todo (Mac: **Cmd+Q**; Windows: todas
   las ventanas y el icono junto al reloj), ábrelo y repite. Si sale la
   lista, elige tu certificado; no pulses Cancelar (Chrome lo recuerda hasta que lo cierras).
+- **No ves a Claude trabajar en Chrome:** puede que esté manejando el Chrome de otro ordenador tuyo conectado a la misma
+  cuenta. Dile *"usa el Chrome de este ordenador"*. Y para verlo en directo, en Chrome haz clic en el **grupo de pestañas**
+  con el nombre de la conversación y selecciona la pestaña de dentro.
 - Cualquier duda: pregúntale *"¿cómo hago…?"*.
 
 ## Privacidad
