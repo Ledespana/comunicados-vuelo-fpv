@@ -83,8 +83,16 @@ defaults write com.google.Chrome AutoSelectCertificateForUrls -array \
  '<string>{"pattern":"https://[*.]clave.gob.es","filter":{"ISSUER":{"CN":"AC FNMT Usuarios"}}}</string>' \
  '<string>{"pattern":"https://[*.]mir.es","filter":{"ISSUER":{"CN":"AC FNMT Usuarios"}}}</string>'
 ```
-- **Windows:** `powershell -NoProfile -ExecutionPolicy Bypass -File .claude/skills/configurar/scripts/windows/chrome-certificado.ps1`
-  (escribe la misma política en el Registro del usuario: `HKCU\Software\Policies\Google\Chrome\AutoSelectCertificateForUrls`).
+- **Windows:** las políticas de Chrome están en una parte protegida del Registro y necesitan **permiso de administrador**
+  (desde aquí no se puede escribir directamente; probado). Usa el archivo
+  `.claude/skills/configurar/scripts/windows/chrome-certificado.reg` (escribe la política en
+  `HKLM\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls`):
+  1. Intenta lanzarlo tú para que solo tenga que aceptar:
+     `powershell -NoProfile -Command "Start-Process regedit.exe -ArgumentList '/s','<ruta absoluta al .reg>' -Verb RunAs"`
+     → Windows le mostrará "¿Quieres permitir que esta aplicación haga cambios?" → **Sí**.
+  2. Si eso falla: que abra la carpeta `.claude\skills\configurar\scripts\windows\` en el Explorador (si no ve `.claude`:
+     Vista → Elementos ocultos), doble clic en **chrome-certificado.reg** → **Sí** → **Sí** → Aceptar.
+  Comprueba después con la sección "Chrome" de `comprobar.ps1`.
 Luego, guíale:
 1. Cerrar Chrome del todo y abrirlo. Mac: Cmd+Q. Windows: cerrar todas las ventanas y, si el icono de Chrome sigue junto
    al reloj, clic derecho → Salir.

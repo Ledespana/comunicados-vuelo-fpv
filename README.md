@@ -97,8 +97,8 @@ ti durante la configuración** (en Mac y en Windows). Si lo quieres hacer a mano
 4. Ten **un solo** certificado FNMT en el llavero (borra los caducados), o Chrome volverá a preguntar.
 
 **Windows:**
-1. Clic derecho en `.claude\skills\configurar\scripts\windows\chrome-certificado.ps1` → **Ejecutar con PowerShell**
-   (guarda la misma política en el Registro de tu usuario).
+1. Abre la carpeta `.claude\skills\configurar\scripts\windows\` del proyecto (si no ves `.claude`: en el Explorador,
+   Vista → Elementos ocultos) y haz **doble clic en `chrome-certificado.reg`** → **Sí** (permiso de administrador) → **Sí**.
 2. Cierra Chrome del todo (todas las ventanas y, si queda el icono junto al reloj, clic derecho → Salir) y ábrelo.
    En `chrome://policy` debe salir *AutoSelectCertificateForUrls* con estado OK.
 3. Ten **un solo** certificado FNMT (tecla Windows → `certmgr.msc` → Personal → Certificados; borra los caducados).
@@ -120,7 +120,7 @@ perfil.ejemplo.yaml                               plantilla del perfil (el asist
 .claude/skills/configurar/SKILL.md                asistente de configuración
 .claude/skills/comunicado-vuelo/SKILL.md          agente de comunicados (incluye recetas del formulario de la sede)
 .claude/skills/comunicado-vuelo/scripts/zona.js   genera la zona de vuelo (se ejecuta en el navegador)
-.claude/skills/configurar/scripts/windows/        comprobaciones y política de Chrome para Windows
+.claude/skills/configurar/scripts/windows/        comprobaciones (PowerShell) y política de Chrome (.reg) para Windows
 comunicados/registro.md                           tu registro de comunicaciones
 ```
 

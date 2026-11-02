@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+; Chrome elige solo el certificado FNMT en Cl@ve e Interior (comunicados de vuelo).
+; Doble clic -> Si (permiso de administrador) -> Si.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls]
+"1"="{\"pattern\":\"https://[*.]clave.gob.es\",\"filter\":{\"ISSUER\":{\"CN\":\"AC FNMT Usuarios\"}}}"
+"2"="{\"pattern\":\"https://[*.]mir.es\",\"filter\":{\"ISSUER\":{\"CN\":\"AC FNMT Usuarios\"}}}"

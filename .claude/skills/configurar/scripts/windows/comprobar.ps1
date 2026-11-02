@@ -16,9 +16,11 @@ $af = $rutas | Where-Object { Test-Path $_ } | Select-Object -First 1
 if ($af) { Write-Output "INSTALADO en $af" } else { Write-Output "NO ENCONTRADO" }
 
 Write-Output "`n=== Chrome: autoselección de certificado ==="
-$k = 'HKCU:\Software\Policies\Google\Chrome\AutoSelectCertificateForUrls'
-if (Test-Path $k) { (Get-ItemProperty $k).PSObject.Properties | Where-Object { $_.Name -match '^\d+$' } | ForEach-Object { Write-Output "$($_.Name): $($_.Value)" } }
-else { Write-Output "NO CONFIGURADO" }
+$hay = $false
+foreach ($k in 'HKLM:\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls', 'HKCU:\Software\Policies\Google\Chrome\AutoSelectCertificateForUrls') {
+  if (Test-Path $k) { $hay = $true; Write-Output "[$k]"; (Get-ItemProperty $k).PSObject.Properties | Where-Object { $_.Name -match '^\d+$' } | ForEach-Object { Write-Output "$($_.Name): $($_.Value)" } }
+}
+if (-not $hay) { Write-Output "NO CONFIGURADO" }
 
 Write-Output "`n=== Carpetas en la nube ==="
 $nube = @("$env:USERPROFILE\Dropbox", "$env:USERPROFILE\OneDrive", "$env:USERPROFILE\iCloudDrive", "G:\Mi unidad", "G:\My Drive")
