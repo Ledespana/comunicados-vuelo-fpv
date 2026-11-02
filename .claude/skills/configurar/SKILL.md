@@ -66,9 +66,13 @@ más de 150 m de zonas urbanas/recreativas), así que NO sirve para comunicacion
 Comprueba si está: Mac `ls /Applications | grep -i autofirma`; Windows sección "AutoFirma" de `comprobar.ps1`.
 - Si no está: https://firmaelectronica.gob.es/Home/Descargas.html → AutoFirma para su sistema (macOS o Windows 64 bits);
   instalar con doble clic y aceptar.
-- Pídele que abra AutoFirma → Preferencias (en Windows: menú Herramientas → Preferencias) → General y marque:
-  "Usar también en las llamadas a AutoFirma desde el navegador" y "Usar solo certificados específicos para firma (no repudio)".
-  Guardar.
+- Pídele que abra AutoFirma → Preferencias (en Windows: menú Herramientas → Preferencias) → pestaña **Almacenes de claves**
+  (NO la pestaña General) y:
+  - Almacén de claves por defecto: el del sistema (Mac: Llavero de macOS; Windows: Windows / Sistema operativo).
+  - Marcar "Usar también en las llamadas a AutoFirma desde el navegador".
+  - Marcar la opción de mostrar solo certificados de firma / no repudio (el texto exacto varía según la versión).
+  - Aceptar. Si alguna opción no aparece, pídele una captura de esa pestaña; no es bloqueante (sirve para que AutoFirma no
+    ofrezca certificados que no son el FNMT).
 
 ## Fase 6 — Chrome: que elija el certificado solo (recomendado)
 Explica qué hace y por qué: sin esto, Chrome enseña una lista de certificados cada vez que entra en Interior o firma;
