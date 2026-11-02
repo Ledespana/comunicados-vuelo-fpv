@@ -47,6 +47,8 @@ abajo si no existen) y se enseña en el resumen final, donde el usuario puede co
    "Comunicación de vuelo de aeronave pilotada por control remoto".
 2. Cl@ve → **Access eIdentifier**. Espera ~8 s.
 3. Login correcto = `https://drones.ses.mir.es/drones-web/acceso`. Si la sesión sigue viva, abre esa URL directamente.
+   Si al volver de Cl@ve sale un error 404 de Interior, abre `https://drones.ses.mir.es/drones-web/acceso`: la sesión ya está hecha.
+4. Recuérdale cómo verte en directo: grupo de pestañas de la conversación en Chrome → seleccionar tu pestaña (ver CLAUDE.md).
 Si se queda parado: probablemente hay un selector de certificado o un aviso del llavero abierto → pide al usuario que elija
 su certificado / "Permitir siempre" (nunca introduzcas contraseñas). Si Cl@ve da error 500 `003002`: el usuario canceló el
 selector → cerrar Chrome del todo y repetir (Mac: Cmd+Q; Windows: cerrar todas las ventanas y, si sigue en la bandeja

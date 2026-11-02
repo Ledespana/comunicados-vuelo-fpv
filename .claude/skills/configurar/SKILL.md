@@ -39,8 +39,10 @@ Sin la extensión Claude in Chrome conectada no se pueden hacer comunicados (es 
    5. En la app de Claude: Ajustes → Conectores (o la sección "Claude in Chrome") → comprobar que está **activado**.
    6. Cerrar esta conversación, abrir una **nueva** en la misma carpeta y decir "configúrame" otra vez (las herramientas
       del navegador se cargan al empezar la conversación; lo ya guardado en perfil.yaml no se pierde).
-3. Prueba: abre una pestaña nueva con https://www.google.com y pídele que confirme que la ve aparecer en Chrome.
-   Si la ves tú pero él no: está en otra ventana de Chrome → que busque el grupo de pestañas de Claude.
+3. Prueba: abre una pestaña nueva con https://www.google.com y explícale cómo verte en directo: en Chrome, clic en el
+   **grupo de pestañas <nombre>** (etiqueta de color a la izquierda de las pestañas; si está plegado, se despliega) →
+   seleccionar la pestaña de dentro. Chrome solo muestra en vivo la pestaña seleccionada. Pídele que confirme que la ve.
+   Si no encuentra el grupo, puede estar en otra ventana de Chrome.
 
 ## Fase 1 — Documentos de AESA (lo más fiable)
 1. Pide al usuario que arrastre a la conversación (o deje en `docs/`) estos PDF de AESA:

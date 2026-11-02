@@ -17,5 +17,8 @@ Guía de uso: @README.md
 Usa solo las herramientas de **Claude in Chrome** (el Chrome del usuario, `mcp__claude-in-chrome__*`), nunca el navegador
 integrado de la app de Claude (panel "Browser", Ctrl+Shift+B), aunque el usuario diga "quiero verlo en el navegador":
 el certificado FNMT, la autoselección (`chrome://policy`) y AutoFirma están configurados en Chrome.
-Para que lo vea: Claude trabaja en un **grupo de pestañas de color con el nombre de la conversación** en Chrome (a veces
-en otra ventana); dile que ponga Chrome al lado de la app y mire ese grupo.
+Para que lo vea EN DIRECTO (Chrome solo muestra la pestaña seleccionada; Claude trabaja en la suya aunque esté detrás):
+al abrir tu pestaña dile, en una frase: "En Chrome, haz clic en el grupo de pestañas **<nombre del grupo>** (si está
+plegado, se despliega) y selecciona la pestaña de dentro; déjala delante y verás cómo relleno cada campo".
+El nombre del grupo suele ser el de la conversación (sácalo de tabs_context_mcp). Trabaja siempre en esa misma pestaña
+(no abras pestañas nuevas sin necesidad) para que no tenga que ir buscándote.
